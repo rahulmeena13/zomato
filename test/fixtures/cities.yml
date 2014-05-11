@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  number_of_restaurants: 1
+  country_id: 
+
+two:
+  name: MyString
+  number_of_restaurants: 1
+  country_id: 
