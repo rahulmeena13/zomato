@@ -1,4 +1,8 @@
-<% @countries.each do |country| %>
-    <%=link_to country.name, list_cities_path(country.name) %>
-    <br />
+<% if @countries.length > 0 %>
+    <% @countries.each do |country| %>
+        <%=link_to country.name, list_cities_path(country.name) %>
+        <br />
+    <% end %>
+<% else %>
+    No Countries in Database, please seed the database using rake db:seed
 <% end %>

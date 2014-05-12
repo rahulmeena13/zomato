@@ -7,6 +7,10 @@ class Restaurant < ActiveRecord::Base
     self.average_rating.to_f/10
   end
 
+  def get_cost
+    self.cost.to_f/100
+  end
+
   def recalculate_average
     self.average_rating = (self.ratings.sum(:value).to_f/self.ratings.length).to_i
     self.save!

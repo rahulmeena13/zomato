@@ -16,6 +16,7 @@
     </p>
   <% end %>
 </p>
+<h5> Cost for 2: Rs. <%=@restaurant.get_cost %></h5>
 <h4>Add a Review:</h4>
     <%= form_for(:review, url: restaurant_review_path(@restaurant)) do |f| %>
       <p> Name: <%= f.text_field :reviewer %></p>

@@ -1,8 +1,12 @@
+<% if @restaurants.length > 0 %>
 <% @restaurants.each do |restaurant| %>
     <p>
     <%=link_to restaurant.name, restaurant_path(@country.name, @city.name,restaurant.id) %> -  <%= show_rating(restaurant) %> - <%=restaurant.reviews_count %> reviews
     <br />
     Address: <%=restaurant.address %> <br />
-    Cost for 2: <%=restaurant.cost %>
+    Cost for 2: Rs. <%=restaurant.get_cost %>
     </p>
+<% end %>
+<% else %>
+    No Restaurants Listed in this City.
 <% end %>
