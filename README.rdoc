@@ -1,28 +1,23 @@
-== README
+== Zomato Skeleton
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple skeleton of zomato.com built in rails 4.0
 
-Things you may want to cover:
+This application requires:
 
-* Ruby version
+* MySQL database
 
-* System dependencies
+* Ruby v1.9.3 or greater
 
-* Configuration
+In order to run the application:
 
-* Database creation
+* Add a database 'zomato_development' in mysql
+* Run <tt>rake db:migrate</tt>
+* Run <tt>rake db:seed</tt>
 
-* Database initialization
+Seed data adds:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* 2 Countries: India, United States of America
+* 7 Cities in India: Delhi NCR, Mumbai, Kolkata, Bhopal, Lucknow, Jaipur, Bangalore
+* 2 Restaurants in Delhi NCR: Monkey Bar, Sol 7 Pub & Brewery
+* 4 Ratings in Monkey Bar
+* 1 Review+Rating in Monkey Bar
