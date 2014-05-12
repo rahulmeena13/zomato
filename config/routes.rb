@@ -1,4 +1,6 @@
 Zomato::Application.routes.draw do
+  get "reviews/add"
+  get "ratings/add"
   get "restaurants/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,6 +11,8 @@ Zomato::Application.routes.draw do
   get ':country_name/:city_name' => 'browser#list_restaurants', as: :list_restaurants
 
   get ':country_name/:city_name/restaurants/:id' => 'restaurants#show', as: :restaurant
+  post 'restaurants/:id/rating' => 'ratings#add', as: :restaurant_rating
+  post 'restaurants/:id/review' => 'reviews#add', as: :restaurant_review
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

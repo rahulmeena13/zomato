@@ -1,3 +1,38 @@
 <%=link_to 'All Countries', root_path %> | <%=link_to @country.name, list_cities_path(@country.name) %> | <%= link_to @city.name, list_restaurants_path(@country.name, @city.name) %> | <%= @restaurant.name %>
 <br />
 <h1><%=@restaurant.name %></h1>
+<h4>Address: <%=@restaurant.address %></h4>
+<h4>Cuisines: <%=@restaurant.cuisines %></h4>
+<p>
+  Rating: <%= show_rating(@restaurant)  %>
+  <%= form_for(:rating, url: restaurant_rating_path(@restaurant)) do |f| %>
+    <p>
+      <%= f.select :value, options_for_select(ratings_options) %>
+
+        <%= hidden_field_tag 'country_name', @country.name %>
+        <%= hidden_field_tag 'city_name', @city.name %>
+
+      <%= f.submit 'Rate' %>
+    </p>
+  <% end %>
+</p>
+<h4>Add a Review:</h4>
+    <%= form_for(:review, url: restaurant_review_path(@restaurant)) do |f| %>
+      <p> Name: <%= f.text_field :reviewer %></p>
+      <p> Rating: <%= f.select :value, options_for_select(ratings_options) %></p>
+      <p> Review: </p>
+      <p> <%= f.text_area :review_text %></p>
+
+        <%= hidden_field_tag 'country_name', @country.name %>
+        <%= hidden_field_tag 'city_name', @city.name %>
+
+    <%= f.submit 'Submit Review' %>
+
+    <% end %>
+<h4><%= @restaurant.reviews_count == 0? "No Reviews Yet!": "Reviews(#{@restaurant.reviews_count}):" %></h4>
+<% @restaurant.reviews.each do |review| %>
+    <p>
+      Reviewer Name: <%=review.reviewer %> - Rated <%=review.get_rating %> / 5 <br />
+      <%= review.review_text %>
+    </p>
+<% end %>
