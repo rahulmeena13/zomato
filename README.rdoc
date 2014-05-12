@@ -1,6 +1,6 @@
 == Zomato Skeleton
 
-A simple skeleton of zomato.com built in rails 4.0
+A simple skeleton of zomato.com built in rails 4.0, Live application can be found at: http://glacial-beach-6499.herokuapp.com
 
 This application requires:
 
@@ -21,3 +21,4 @@ Seed data adds:
 * 2 Restaurants in Delhi NCR: Monkey Bar, Sol 7 Pub & Brewery
 * 4 Ratings in Monkey Bar
 * 1 Review+Rating in Monkey Bar
+
