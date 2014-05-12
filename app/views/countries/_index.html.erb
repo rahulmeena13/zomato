@@ -1,0 +1,4 @@
+<% @countries.each do |country| %>
+    <%=link_to country.name, list_cities_path(country.name) %>
+    <br />
+<% end %>

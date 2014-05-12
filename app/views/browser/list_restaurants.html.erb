@@ -1,0 +1,6 @@
+<%=link_to 'All Countries', root_path %> | <%=link_to @country.name, list_cities_path(@country.name) %> | <%= @city.name %>
+<br />
+
+<p>Browse Restaurants in <%= @city.name %>:</p>
+
+<%= render :partial => 'restaurants/index' %>

@@ -4,7 +4,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :name
       t.text :address
       t.text :cuisines
-      t.integer :average_rating
+      t.integer :average_rating, :default => 0
       t.integer :cost
       t.integer :ratings_count, :default => 0
       t.integer :reviews_count, :default => 0

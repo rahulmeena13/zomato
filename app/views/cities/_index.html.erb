@@ -1,0 +1,4 @@
+<% @cities.each do |city| %>
+    <%=link_to city.name, list_restaurants_path(@country.name,city.name) %>
+    <br />
+<% end %>

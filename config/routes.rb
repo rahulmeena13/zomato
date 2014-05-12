@@ -1,11 +1,14 @@
 Zomato::Application.routes.draw do
-  get "browser/index"
+  get "restaurants/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'browser#index'
-  get 'browser/index'
+  get ':country_name' => 'browser#list_cities', as: :list_cities
+  get ':country_name/:city_name' => 'browser#list_restaurants', as: :list_restaurants
+
+  get ':country_name/:city_name/restaurants/:id' => 'restaurants#show', as: :restaurant
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

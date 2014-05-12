@@ -1,0 +1,3 @@
+<%=link_to 'All Countries', root_path %> | <%=link_to @country.name, list_cities_path(@country.name) %> | <%= link_to @city.name, list_restaurants_path(@country.name, @city.name) %> | <%= @restaurant.name %>
+<br />
+<h1><%=@restaurant.name %></h1>

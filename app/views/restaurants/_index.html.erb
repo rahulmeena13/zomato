@@ -1,0 +1,8 @@
+<% @restaurants.each do |restaurant| %>
+    <p>
+    <%=link_to restaurant.name, restaurant_path(@country.name, @city.name,restaurant.id) %> -  <%= determine_rating(restaurant) %> - <%=restaurant.reviews_count %> reviews
+    <br />
+    Address: <%=restaurant.address %> <br />
+    Cost for 2: <%=restaurant.cost %>
+    </p>
+<% end %>
