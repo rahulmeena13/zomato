@@ -21,3 +21,9 @@ Country.find_by_name('United States of America').cities.create([{ name: 'Chicago
 
 City.find_by_name('Delhi NCR').restaurants.create([{name: 'Monkey Bar', address: 'Plot 11, Upper Ground Floor, LSC, Pocket C 6 & 7, Vasant Kunj, New Delhi', cuisines: 'American, North Indian, Asian, European', cost: 200000},
                                                   {name: 'Sol 7 Pub & Brewery', address: '205-208 A, Cyber Hub, DLF Cyber City, Gurgaon', cuisines: 'Chinese, Thai, Japanese, Asian', cost: 250000}])
+
+restaurant = Restaurant.find_by_name('Monkey Bar')
+restaurant.ratings.create([{value: 40}, {value: 45}, {value:35}, {value: 50}])
+
+review = restaurant.reviews.create({reviewer: "Rahul Meena", review_text: "Very Good ambiance, food and service was also great."})
+restaurant.ratings.create([{value: 45, review_id: review.id}])
