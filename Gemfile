@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   gem 'mysql'
   gem 'pry'
+  gem 'thin'
 end
 
 group :production do

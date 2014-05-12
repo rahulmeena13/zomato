@@ -18,6 +18,7 @@
 </p>
 <h5> Cost for 2: Rs. <%=@restaurant.get_cost %></h5>
 <h4>Add a Review:</h4>
+<%= flash[:error] %>
     <%= form_for(:review, url: restaurant_review_path(@restaurant)) do |f| %>
       <p> Name: <%= f.text_field :reviewer %></p>
       <p> Rating: <%= f.select :value, options_for_select(ratings_options) %></p>
@@ -31,7 +32,7 @@
 
     <% end %>
 <h4><%= @restaurant.reviews_count == 0? "No Reviews Yet!": "Reviews(#{@restaurant.reviews_count}):" %></h4>
-<% @restaurant.reviews.each do |review| %>
+<% @restaurant.reviews.order('reviews.created_at DESC').each do |review| %>
     <p>
       Reviewer Name: <%=review.reviewer %> - Rated <%=review.get_rating %> / 5 <br />
       <%= review.review_text %>
