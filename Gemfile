@@ -14,12 +14,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-group :development, :production do
+group :development do
   gem 'mysql'
+  gem 'pry'
 end
 
-group :development do
-  gem 'pry'
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
 group :test do
